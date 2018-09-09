@@ -1,0 +1,16 @@
+Show<br><br>
+<a href='/'>목록으로</a><br><br>
+제목 : <%=@post.title %><br>
+내용 : <%=@post.content %><br>
+-----------------------------<br>
+댓글<br>
+<% @post.comments.each do |c|%>
+    <%=c.content%><br>
+<%end%>
+<br>
+<form action='/home/<%=@post.id%>/comment/create' method='post'>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    내용 <input type='text' name="comment_content"><br>
+    <input type="submit" value="작성">
+</form>
+    

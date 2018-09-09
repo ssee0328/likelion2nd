@@ -1,0 +1,12 @@
+<h1>Index</h1>
+<a href="/home/new">글쓰기</a>
+<br><br>
+제목<br><br>
+<%@posts.each do |x|%>
+    <a href='/home/show/<%=x.id%>'><%=x.title%></a>
+    | <a href='/home/destroy/<%=x.id%>'>삭제</a>
+    <br><br>
+    
+<%end%>
+
+
